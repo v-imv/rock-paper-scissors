@@ -1,3 +1,4 @@
+// This function returns Rock / Paper / Scissors at random
 function computerPlay(){
     let rock = 'Rock'
     let paper = 'Paper'
