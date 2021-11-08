@@ -6,7 +6,7 @@ alert("Welcome To Rock Paper Scissors! Press 'OK' to begin a best of 5 game (fir
 // Looping Steps 1 to 5 until there is a winner:
 while(playerScore < 3 || computerScore <3) {
     if(playerScore === 3 || computerScore === 3){break;}
-    // Prompt the player for their input:
+    // Step 1. Prompt the player for their input:
     let askInput = window.prompt("Rock Paper or Scissors?")
 
 // Step 2. Make the player's input case insensitive and store it:
