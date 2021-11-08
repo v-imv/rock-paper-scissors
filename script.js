@@ -3,9 +3,10 @@ let playerScore = 0;
 let computerScore = 0;
 alert("Welcome To Rock Paper Scissors! Press 'OK' to begin a best of 5 game (first to 3 points).")
 
-// Step 1. Prompt the player for their input:
+// Looping Steps 1 to 5 until there is a winner:
 while(playerScore < 3 || computerScore <3) {
     if(playerScore === 3 || computerScore === 3){break;}
+    // Prompt the player for their input:
     let askInput = window.prompt("Rock Paper or Scissors?")
 
 // Step 2. Make the player's input case insensitive and store it:
@@ -65,7 +66,7 @@ function winDeterminer(){
     else if(playerScore === 'scissors' && computerSelection === 'scissors'){
         alert("You both drew scissors. It is a tie.");
     }
-    // else input from the player was incorrect and we must start again from step 1
+    else(alert("You shall not pass!! Until you input rock paper or scissors correctly that is..."))
 }
 
 // Step 6. Repeat steps 1 to 5 until either party wins 3 times (best of 5):
