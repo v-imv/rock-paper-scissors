@@ -1,7 +1,43 @@
+const body = document.body;
+
+const rockButton = document.createElement('button');
+body.appendChild(rockButton);
+rockButton.setAttribute('id', 'rock-button');
+rockButton.setAttribute('class', 'buttons');
+rockButton.textContent = 'Rock';
+rockButton.addEventListener('click', playerSelectionRock);
+
+const paperButton = document.createElement('button');
+body.appendChild(paperButton);
+paperButton.setAttribute('id', 'paper-button');
+paperButton.setAttribute('class', 'buttons');
+paperButton.textContent = 'Paper';
+paperButton.addEventListener('click', playerSelectionPaper);
+
+const scissorsButton = document.createElement('button');
+body.appendChild(scissorsButton);
+scissorsButton.setAttribute('id', 'scissors-button');
+scissorsButton.setAttribute('class', 'buttons');
+scissorsButton.textContent = 'Scissors'
+scissorsButton.addEventListener('click', playerSelectionScissors);
+
+function playerSelectionRock(){
+    return("rock");
+}
+
+function playerSelectionPaper(){
+    return("paper");
+}
+
+function playerSelectionScissors(){
+    return("scissors");
+}
+
+
 // My Rock Paper Scissors Algorithm
 let playerScore = 0;
 let computerScore = 0;
-alert("Welcome To Rock Paper Scissors! Press 'OK' to begin a best of 5 game (first to 3 points).")
+/* alert("Welcome To Rock Paper Scissors! First to 5 points wins. \nPress 'OK' to begin a game.")
 
 // Looping Steps 1 to 5 until there is a winner:
 while(playerScore < 3 || computerScore <3) {
@@ -85,3 +121,5 @@ function winAnnouncer(){
 winDeterminer();
 winAnnouncer();
 }
+
+*/
