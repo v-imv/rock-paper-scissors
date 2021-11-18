@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
-//alert("Welcome To Rock Paper Scissors! First to 5 points wins. \nPress 'OK' to begin a game.")
+let tieScore = 0;
+alert("Welcome To Rock Paper Scissors! First to 5 points wins. \nPress 'OK' to begin a game.")
 
 const body = document.body;
 
@@ -25,27 +26,23 @@ scissorsButton.setAttribute('class', 'buttons');
 scissorsButton.textContent = 'Scissors'
 scissorsButton.addEventListener('click', playerSelectionScissorsRound);
 
-let playerSelectRock = 'rock';
+const playerSelectRock = 'rock'
 function playerSelectionRockRound(){
-    playerSelectRock;
-    computerPlay();
-    winDeterminer();
+    winDeterminer(playerSelectRock, computerPlay());
     winAnnouncer();
 }
 
-let playerSelectPaper = 'paper';
+const playerSelectPaper = 'paper';
 function playerSelectionPaperRound(){
     playerSelectPaper;
-    computerPlay();
-    winDeterminer();
+    winDeterminer(playerSelectPaper, computerPlay());
     winAnnouncer();
 }
 
-let playerSelectScissors = 'scissors';
+const playerSelectScissors = 'scissors';
 function playerSelectionScissorsRound(){
     playerSelectScissors;
-    computerPlay();
-    winDeterminer();
+    winDeterminer(playerSelectScissors, computerPlay());
     winAnnouncer();
 }
 
@@ -62,48 +59,53 @@ function computerPlay(){
     else {return('scissors')}
 }
 
-function winDeterminer(){
-    if(playerSelectRock === 'rock' && computerPlay() === 'rock'){
+function winDeterminer(playerSelection, computerSelection){
+    if(playerSelection === 'rock' && computerSelection === 'rock'){
         alert("You both drew rock. It is a tie.");
+        ++tieScore;
     }
-    else if(playerSelectRock === 'rock' && computerPlay() === 'paper'){
+    else if(playerSelection === 'rock' && computerSelection === 'paper'){
         alert("You lose.. Rock loses against Paper.");
         ++computerScore;
     }
-    else if(playerSelectRock === 'rock' && computerPlay() === 'scissors'){
+    else if(playerSelection === 'rock' && computerSelection === 'scissors'){
         alert("You win! Rock beats Scissors!");
         ++playerScore;
     }
-    else if(playerSelectPaper === 'paper' && computerPlay() === 'rock'){
+    else if(playerSelection === 'paper' && computerSelection === 'rock'){
         alert("You win! Paper beats Rock!");
         ++playerScore;
     }
-    else if(playerSelectPaper === 'paper' && computerPlay() === 'paper'){
+    else if(playerSelection === 'paper' && computerSelection === 'paper'){
         alert("You both drew paper. It is a tie.")
+        ++tieScore;
     }
-    else if(playerSelectPaper === 'paper' && computerPlay() === 'scissors'){
+    else if(playerSelection === 'paper' && computerSelection === 'scissors'){
         alert("You lose.. Paper loses against Scissors.");
         ++computerScore;
     }
-    else if(playerSelectScissors === 'scissors' && computerPlay() === 'rock'){
+    else if(playerSelection === 'scissors' && computerSelection === 'rock'){
         alert("You lose. Scissors lose against Rock.");
         ++computerScore;
     }
-    else if(playerSelectScissors === 'scissors' && computerPlay() === 'paper'){
+    else if(playerSelection === 'scissors' && computerSelection === 'paper'){
         alert("You win! Scissors beats Paper!");
         ++playerScore;
     }
-    else if(playerSelectScissors === 'scissors' && computerPlay() === 'scissors'){
+    else if(playerSelection === 'scissors' && computerSelection === 'scissors'){
         alert("You both drew scissors. It is a tie.");
+        ++tieScore;
     }
 }
 
 function winAnnouncer(){
     if(playerScore === 5){
-        alert('Congratulations! You won with a score of ' + playerScore + ' to ' + computerScore + '.' + ' Refresh the page if you would like to play again.')
+        alert('Congratulations! You won with a score of ' + playerScore + ' to ' + computerScore + '.')
+        location.reload();
     }
     else if(computerScore === 5){
-        alert('Better luck next time.. You lost with a score of ' + playerScore + ' to ' + computerScore + '.' + ' Refresh the page if you would like to play again.')
+        alert('Better luck next time.. You lost with a score of ' + playerScore + ' to ' + computerScore + '.')
+        location.reload();
     }
 }
 
