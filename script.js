@@ -5,31 +5,52 @@ alert("Welcome To Rock Paper Scissors! First to 5 points wins. \nPress 'OK' to b
 
 const body = document.body;
 
+const buttonsDiv = document.createElement('div');
+body.appendChild(buttonsDiv);
+buttonsDiv.setAttribute('class', 'buttonContainer');
+
 const rockButton = document.createElement('button');
-body.appendChild(rockButton);
+buttonsDiv.appendChild(rockButton);
 rockButton.setAttribute('id', 'rock-button');
 rockButton.setAttribute('class', 'buttons');
 rockButton.textContent = 'Rock';
 rockButton.addEventListener('click', playerSelectionRockRound);
 
 const paperButton = document.createElement('button');
-body.appendChild(paperButton);
+buttonsDiv.appendChild(paperButton);
 paperButton.setAttribute('id', 'paper-button');
 paperButton.setAttribute('class', 'buttons');
 paperButton.textContent = 'Paper';
 paperButton.addEventListener('click', playerSelectionPaperRound);
 
 const scissorsButton = document.createElement('button');
-body.appendChild(scissorsButton);
+buttonsDiv.appendChild(scissorsButton);
 scissorsButton.setAttribute('id', 'scissors-button');
 scissorsButton.setAttribute('class', 'buttons');
 scissorsButton.textContent = 'Scissors'
 scissorsButton.addEventListener('click', playerSelectionScissorsRound);
 
+const scoreboardDiv = document.createElement('div');
+body.appendChild(scoreboardDiv);
+scoreboardDiv.setAttribute('class', 'scoreContainer');
+
+const playerScoreTracker = document.createElement('div');
+scoreboardDiv.appendChild(playerScoreTracker);
+playerScoreTracker.textContent = ('Player Score: ' + playerScore);
+
+const computerScoreTracker = document.createElement('div');
+scoreboardDiv.appendChild(computerScoreTracker);
+computerScoreTracker.textContent = ('Computer Score: ' + computerScore);
+
+const tieScoreTracker = document.createElement('div');
+scoreboardDiv.appendChild(tieScoreTracker);
+tieScoreTracker.textContent = ('Ties: ' + tieScore);
+
 const playerSelectRock = 'rock'
 function playerSelectionRockRound(){
     winDeterminer(playerSelectRock, computerPlay());
     winAnnouncer();
+    scoreTracker();
 }
 
 const playerSelectPaper = 'paper';
@@ -37,6 +58,7 @@ function playerSelectionPaperRound(){
     playerSelectPaper;
     winDeterminer(playerSelectPaper, computerPlay());
     winAnnouncer();
+    scoreTracker();
 }
 
 const playerSelectScissors = 'scissors';
@@ -44,6 +66,7 @@ function playerSelectionScissorsRound(){
     playerSelectScissors;
     winDeterminer(playerSelectScissors, computerPlay());
     winAnnouncer();
+    scoreTracker();
 }
 
 
@@ -57,6 +80,12 @@ function computerPlay(){
         return('paper')
     }
     else {return('scissors')}
+}
+
+function scoreTracker(){
+    playerScoreTracker.textContent = ('Player Score: ' + playerScore);
+    computerScoreTracker.textContent = ('Computer Score: ' + computerScore);
+    tieScoreTracker.textContent = ('Ties: ' + tieScore);
 }
 
 function winDeterminer(playerSelection, computerSelection){
