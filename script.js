@@ -8,6 +8,7 @@ const body = document.body;
 const buttonsDiv = document.createElement('div');
 body.appendChild(buttonsDiv);
 buttonsDiv.setAttribute('class', 'buttonContainer');
+buttonsDiv.setAttribute('style', 'display: flex; justify-content: center; align-items: center;')
 
 const rockButton = document.createElement('button');
 buttonsDiv.appendChild(rockButton);
@@ -33,6 +34,8 @@ scissorsButton.addEventListener('click', playerSelectionScissorsRound);
 const scoreboardDiv = document.createElement('div');
 body.appendChild(scoreboardDiv);
 scoreboardDiv.setAttribute('class', 'scoreContainer');
+scoreboardDiv.setAttribute('style', 'display: flex; justify-content: center; align-items: center; flex-direction: column;')
+
 
 const playerScoreTracker = document.createElement('div');
 scoreboardDiv.appendChild(playerScoreTracker);
