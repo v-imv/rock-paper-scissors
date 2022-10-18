@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 This is a recreation of the game rock paper scissors using the JavaScript DOM.
 
-You can see how it functions by clicking on "github-pages" under the heading "Environments".
+You can see how it functions by visiting this [link](https://v-imv.github.io/rock-paper-scissors/) or by clicking on the page link under the "About" section on the right hand side of the screen.
 
 ## Purpose Of This Project
 I undertook this project to practice using basic JavaScript and to learn about using the DOM.
